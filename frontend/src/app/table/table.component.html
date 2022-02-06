@@ -1,0 +1,21 @@
+<div style="overflow-x: auto;">
+  <table class="table table-hover text-center shadow-sm align-middle fixed_header"
+    [ngClass]="imageTable?'team_header':'recruit_header'">
+    <thead class="gradient-blue text-light" style="line-height: 2.5rem;">
+      <tr>
+        <th *ngFor="let heading of tableHeadings">{{heading}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tableData of tableData">
+        <ng-container *ngIf="imageTable">
+        <td ><img src="{{tableData.image}}" height="70" class="round"></td>
+        <td *ngFor="let col of tableIndex;let i = index" [class.name]="i == 0">{{tableData[col]}}</td>
+      </ng-container>
+      <ng-container *ngIf="!imageTable" >
+      <td *ngFor="let col of tableIndex">{{tableData[col]}}</td>
+    </ng-container>
+      </tr>
+    </tbody>
+  </table> 
+</div> 

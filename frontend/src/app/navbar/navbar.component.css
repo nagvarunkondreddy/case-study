@@ -1,0 +1,15 @@
+nav{
+    background-image: linear-gradient(#0E2239,#265A96);
+}
+
+
+
+.nav-link:hover{
+ 
+    font-weight:600 !important;
+}
+
+.signout-btn{
+    cursor: pointer;
+    color: rgba(255,255,255,.75) !important;
+}

@@ -1,0 +1,12 @@
+<div class="container" style="height:80%">
+    <div *ngIf="!showLoading">
+        <app-heading [heading1]="'List of Applicants'" [addButtonDisplay]="false"></app-heading>
+        <br>
+        <app-table [tableHeadings]="recruitmentTableHeadings" [tableIndex]="recruitmentTableIndex" [tableData]="recruitmentTableData" [imageTable]="false">
+        </app-table>
+    </div>
+    <div *ngIf="showLoading" style="height: 100%;" class="d-flex justify-content-center align-items-center">
+        <app-loading ></app-loading>
+
+    </div>
+</div>

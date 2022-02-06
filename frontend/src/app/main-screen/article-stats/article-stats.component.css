@@ -1,0 +1,68 @@
+@media screen and (min-width: 1400px){
+    #left{
+        height: 30rem;
+    }
+    #right-top{
+        height: 19rem;
+        margin-bottom: 0rem;
+    }
+    #right-bottom{
+        height: 10rem;
+    }
+    #domainsChart{
+        max-height: 12rem;
+    }
+}
+@media screen and (max-width: 1400px) {
+    #left{
+        height: 27rem;
+    }
+    #right-top{
+        height: 16rem;
+    }
+    h4{
+        font-size: 1.25rem;
+    }
+    #right-bottom{
+        height: 10rem;
+    }
+    #domainsChart{
+        max-height: 10rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    #right-top{
+        width: 48%;
+        margin-right: 1.6rem;
+        height: 17rem;
+    }
+    #right-bottom{
+        width: 48%;
+        height: 17rem;
+    }
+    #right-bottom span{
+        margin-top: 1.25rem;
+    }
+    #right-cards{
+        padding-left: 1.5rem;
+        padding-right: 0;
+    }
+}
+@media screen and (max-width: 576px) {
+    #left{
+        height: 16rem;
+    }
+    #right-top{
+        width: 100%;
+    }
+    #right-bottom{
+        height: 12rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+    #right-bottom span{
+        margin-top: 0.5rem;
+    }
+}
+

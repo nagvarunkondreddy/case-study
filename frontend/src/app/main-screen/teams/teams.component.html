@@ -1,0 +1,12 @@
+<div class="container" style="height:80%">
+    <div *ngIf="!showLoading">
+        <app-heading [modalType]="'#teamModal'" [heading1]="'Team'" [addButtonDisplay]="true"
+        [addButtonText]="'Add New Member'" [mobileViewButtonText]="'new'">
+    </app-heading>
+    <br>
+    <app-table [tableHeadings]="teamTableHeadings" [tableData]="teamTableData" [tableIndex]="teamTableIndex" [imageTable]="true"></app-table>
+    </div>
+<div *ngIf="showLoading"  style="height: 100%;" class="d-flex justify-content-center align-items-center">
+    <app-loading ></app-loading>
+</div>
+</div>

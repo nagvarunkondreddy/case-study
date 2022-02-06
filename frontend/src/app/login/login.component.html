@@ -1,0 +1,53 @@
+<div class="main">
+    <div class="container-login">
+        <div class="wrap-login">
+            <div class="login-pic">
+                <img src="../../assets/images/iota_logo.png" alt="IMG">
+            </div>
+
+            <form class="login-form" [formGroup] = "loginForm" (ngSubmit)="loginDetails()">
+                <span class="login-form-title">
+                    Member Login
+                </span> 
+
+                <div class="wrap-input">
+                    <input class="input100" type="text" placeholder="Email" autocomplete="off" formControlName="email">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div *ngIf=" (f.email.dirty && f.email.invalid)">
+                    <div *ngIf="f.email.errors?.required" class="form-error">Email is required</div>
+                    <div *ngIf="f.email.errors?.pattern" class="form-error">invalid email id</div>
+                </div>
+
+                <div class="wrap-input">
+                    <input class="input100" [type]="showPassword ? 'text' : 'password'"  placeholder="Password" autocomplete="off" formControlName="password">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                    </span>
+                    <span class="symbol-input1077">
+                        <i class="bi bi-eye-fill" aria-hidden="true" (click)="showPassword = !showPassword" [class.hide]="!showPassword"></i>
+                        <i class="bi bi-eye-slash-fill" (click)="showPassword = !showPassword" [class.hide]="showPassword"></i>
+                    </span>
+                </div>
+
+                <div *ngIf=" (f.password.dirty && f.password.invalid)">
+                    <div *ngIf="f.password.errors?.required" class="form-error">password is required</div>
+                    <div *ngIf="f.password.errors?.minlength" class="form-error">Minimum 5 characters is required</div>
+                </div>
+                <div class="form-error" *ngIf="((f.email.valid) && (f.password.valid))">
+                    {{formErrorMsg}}
+                </div>
+                <div class="container-login100-form-btn">
+                    <button *ngIf="!showLoading" class="login100-form-btn" [disabled]="!loginForm.valid">
+                        Login
+                    </button>
+                    <app-loading *ngIf="showLoading"></app-loading>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

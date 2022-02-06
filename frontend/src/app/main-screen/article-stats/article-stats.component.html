@@ -1,0 +1,44 @@
+<div class="container">
+    <app-heading [heading1]="'Statistics'" [addButtonDisplay]="true" [addButtonText]="'Add New Article'"
+        [mobileViewButtonText]="'new'">
+    </app-heading>
+    <br> 
+    <div class="row">
+        <div class="col-12 col-lg-8 col-md-12 col-sm-12">
+            <div class="card shadow-sm" style="margin-bottom: 1rem" id="left">
+                <div class="card-body" id="left-graph">
+                    <h3 class="blue-default-text">Most Recent Articles</h3>
+                    <canvas id="readsChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="row col-12 col-lg-4 col-md-12 col-sm-12" id="right-cards">
+            <div class="card shadow-sm col-lg-12 col-md-6 col-12" id="right-top">
+                <div class="card-body">
+                    <h4 class="blue-default-text text-center">Number of Articles by Domain</h4>
+                    <br>
+                    <canvas id="domainsChart"></canvas>
+                </div>
+            </div>
+            <div class="card shadow-sm col-lg-12 col-md-6" id="right-bottom">
+                <div class="card-body">
+                    <h4 class="blue-default-text text-center">Most Read Article</h4>
+                    <div class="row">
+                        <span class="col-4 col-md-4 blue-default-text"><b>Title</b></span><span
+                            class="col-8 col-md-8">Article
+                            Title</span>
+                        <br>
+                        <span class="col-4 col-md-4 blue-default-text"><b>Author</b></span><span
+                            class="col-8 col-md-8">Author Name</span>
+                        <br>
+                        <span class="col-4 col-md-4 blue-default-text"><b>Domain</b></span><span
+                            class="col-8 col-md-8">Web Dev</span>
+                        <br>
+                        <span class="col-4 col-md-4 blue-default-text"><b>Reads</b></span><span
+                            class="col-8 col-md-8">736</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

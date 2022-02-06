@@ -1,0 +1,89 @@
+<div class="modal fade" id="Modal-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title blue-default-text" id="exampleModalLabel">{{modalTitle}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body"> 
+                <div class="container">
+                    <form [formGroup]="Form" (ngSubmit)="onSubmit()" id="detailsForm">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="row mb-3">
+                                    <label for="projectTitle"
+                                        class="col-sm-2 col-form-label blue-default-text asterisk">{{inputOneLabel}}</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="projectTitle"
+                                            [placeholder]="inputOnePlaceholder" formControlName="inputOneLabel" >
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="gitlabLink"
+                                        class="col-sm-2 col-form-label blue-default-text asterisk">{{inputTwoLabel}}</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="gitlabLink"
+                                            [placeholder]="inputTwoPlaceholder" formControlName="inputTwoLabel">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="teamNames"
+                                        class="col-sm-2 col-form-label blue-default-text asterisk">{{inputThreeLabel}}</label>
+                                    <div class="col-sm-9">
+                                        <input type={{inputThreeLabelType}} class="form-control" id="teamNames"
+                                            placeholder="Member names..." formControlName="inputThreeLabel">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="images"
+                                        class="col-sm-2 col-form-label blue-default-text asterisk">{{inputFourLabel}}</label>
+                                    <div class="col-sm-9">
+                                        <div class="position-relative uploadImage" (click)="openImageUpload()">
+                                            <i class=" bi bi-plus position-absolute top-50 start-50 translate-middle"
+                                                style="color: #757575; font-size: 40px"></i>
+                                        </div>
+                                        <input type="file" id="pro-image" name="pro-image" style="display: none;"
+                                            class="form-control" (change)="readImage($event)" multiple formControlName="inputFourLabel">
+                                    </div>
+                                    <div class="container mt-3">
+                                        <div class="row">
+                                            <div class="col-3" *ngFor="let img of images; let i=index">
+                                                <div class="image-cancel" (click)="removeImg(i)">x</div>
+                                                <img [src]='img.image' style="width: 70px; height: 70px;" />
+                                                <div class="blue-default-text imageName">{{img.name}}</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="row">
+                                    <label for="description"
+                                        class="col-sm-3 col-form-label blue-default-text asterisk">{{inputFiveLabel}}</label>
+                                    <div class="col-sm-9">
+                                        <textarea id="description" cols="40" rows="11" formControlName="inputFiveLabel"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn  discard-button" data-bs-dismiss="modal">
+                    <span class="btn-label">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </span> 
+                    Discard</button>
+                <button form="detailsForm" type="submit" [disabled]="!Form.valid" class="btn  discard-button-1" data-bs-dismiss="modal">
+                    <span class="btn-label-1">
+                        <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                    </span>
+                    Save</button>
+            </div>
+        </div>
+    </div>
+</div>

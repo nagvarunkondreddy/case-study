@@ -1,0 +1,91 @@
+<div class="modal fade" id="teamModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title blue-default-text" id="ModalLabel">Add A New Member</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <form [formGroup] = "memberForm" (ngSubmit)="addMemberDetails()" id="teamMemberDetailsForm">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="row mb-3">
+                                    <label for="memberName"
+                                        class="col-sm-2 col-form-label blue-default-text asterisk">Name</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="memberName"
+                                            placeholder="Enter name..." formControlName="name">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="domain"
+                                        class="col-sm-2 col-form-label blue-default-text asterisk">Domain</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="domain"
+                                            placeholder="Enter domain..." formControlName="domain">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="role"
+                                        class="col-sm-2 col-form-label blue-default-text asterisk">Role</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="role" placeholder="Enter role" formControlName="role">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="number"
+                                        class="col-sm-2 col-form-label blue-default-text asterisk">Number</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="number" placeholder="enter mobile number" formControlName="number">
+                                    </div>
+
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="joined"
+                                        class="col-sm-2 col-form-label blue-default-text asterisk">Joined</label>
+                                    <div class="col-sm-9">
+                                        <input type="date" class="form-control" id="joined"
+                                            placeholder="Enter joining date" formControlName="joined">
+                                    </div>
+
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="profile"
+                                        class="col-sm-2 col-form-label blue-default-text asterisk">profile</label>
+                                    <div class="col-sm-9">
+                                        <input type="file" class="form-control" id="profile" formControlName="profile">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="row">
+                                    <label for="description"
+                                        class="col-sm-2 col-form-label blue-default-text asterisk">About</label>
+                                    <div class="col-sm-9">
+                                        <textarea id="description" cols="40" rows="11" formControlName="description"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn  discard-button" data-bs-dismiss="modal">
+                    <span class="btn-label">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </span>
+                    Discard</button>
+                <button type="submit" form="teamMemberDetailsForm" class="btn  discard-button-1" data-bs-dismiss="modal" [disabled]="memberForm.invalid">
+                    <span class="btn-label-1">
+                        <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                    </span>
+                    Save</button>
+            </div>
+        </div>
+    </div>
+</div>

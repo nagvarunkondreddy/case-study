@@ -1,0 +1,16 @@
+<br>
+<div class="row flex-row flex-nowrap horizontalScroll pb-2" style="overflow-x: scroll;">
+    <div class="col col-lg-4 col-md-6 col-12" *ngFor="let card of cardContent;">
+        <div class="card h-100">
+            <div class="image-box">
+                <img [src]="cardImageLocation" class="card-img-top">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{card.inputOneLabel}}</h5>
+                <p class="card-text" style="min-height: 42%;">{{card.inputFiveLabel}}</p>
+                <a  class="btn blue-default float-end">Details</a>
+                <a (click)="deleteCard(card._id)" class="btn blue-default float-start">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>

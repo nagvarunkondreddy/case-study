@@ -1,0 +1,17 @@
+<div class="container" style="height:80%">
+    <div *ngIf="!showLoading">
+        <app-heading [modalType]="'#Modal-1'" [heading1]="'Upcoming'" [addButtonDisplay]="true"
+        [addButtonText]="'Add New Event'" [mobileViewButtonText]="'new'">
+    </app-heading>
+    <app-cards [cardImageLocation]="'../../assets/images/random_event.jpg'" [cardTitle]="'Event'" [cardContent]="eventCardContent"></app-cards>
+    <br>
+    <app-heading [heading1]="'Completed'" [addButtonDisplay]="false">
+    </app-heading>
+    <app-cards [cardImageLocation]="'../../assets/images/random_event.jpg'" [cardTitle]="'Event'" [cardContent]="eventCardContent"></app-cards>
+    <br>
+    </div>
+
+    <div *ngIf="showLoading" style="height: 100%;" class="d-flex justify-content-center align-items-center">
+        <app-loading ></app-loading>
+    </div>
+</div>

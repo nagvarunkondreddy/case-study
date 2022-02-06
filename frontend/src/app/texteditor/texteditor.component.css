@@ -1,0 +1,35 @@
+.text-editor {
+    box-shadow: 5px 5px 10px #00000033;
+    border: 1px solid #707070;
+    border-radius: 20px;
+    opacity: 1;
+    height: 550px;
+  }
+  
+  .text-editor-features {
+    background: var(--primary-color) 0% 0% no-repeat padding-box;
+    border-radius: 20px 20px 0px 0px;
+    opacity: 1;
+    height: 60px;
+  }
+  
+  .col-lg-1 {
+    width: 4.44444444%;
+    font-size: 20px;
+  }
+
+  textarea{
+    border-radius: 0 0 20px 20px;
+    border: none;
+    box-shadow: none;
+    resize: none;
+  }
+
+  textarea:focus{
+    outline: none !important;
+  }
+
+  .commonCss{
+    cursor: pointer;
+    padding: 2px 4px;
+  }

@@ -1,0 +1,39 @@
+<div class="container">
+    <app-heading [heading1]="'Article'" [addButtonDisplay]="true" [addButtonText]="'Publish'">
+    </app-heading>
+    <div class="text-editor mt-3 mb-2">
+        <div class="container-fluid d-flex flex-column h-100">
+            <div class="row text-editor-features d-flex align-items-center justify-content-start">
+                <div class="col-lg-2 col-4">
+                    <select [(ngModel)]="fontStyle" (ngModelChange)="changeFontStyle()"  class="form-select">
+                        <option   value="Roboto">Roboto</option>
+                        <option  value="Georgia">Georgia</option>
+                        <option value="Helvetica">Helvetica</option>
+                    </select>
+                </div>
+                <div class="col-lg-2 col-4">
+                    <select [(ngModel)] ="fontSize"  class="form-select">
+                        <option value="22">22</option>
+                        <option value="24">24</option>
+                        <option value="26">26</option>
+                        <option value="28">28</option>
+                        <option value="40">40</option>
+                    </select>
+                </div>
+                <div class="col-lg-1 col-1 " >
+                  <b [ngStyle]="{'border':boldToggleButton ? '1px solid white' : 'none'}" (click)="makeTextBold()" class="text-light commonCss" >B</b>
+                </div>
+                <div class="col-lg-1 col-1">
+                    <em [ngStyle]="{'border':italicToggleButton ? '1px solid white' : 'none'}" (click)="makeTextItalic()" class="text-light commonCss">I</em>
+                </div>
+                <div class="col-lg-1 col-1">
+                    <u [ngStyle]="{'border':underlineToggleButton ? '1px solid white' : 'none'}" (click)="underlineText()" class="text-light commonCss">U</u>
+                </div>
+
+            </div>
+            <div class="row flex-grow-1">
+                <iframe id="editor"></iframe>
+            </div>
+        </div>
+    </div>
+</div>

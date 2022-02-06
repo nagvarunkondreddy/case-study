@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" routerLink="/">
+            <img src="../../assets/images/iota_logo.png" class="d-inline-block" height="50">
+            <span style="margin-left: 1rem;">IoTA</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item" *ngIf="userRole === 'technicalLead'">
+                    <a class="nav-link " routerLink="/project"  id="project">Projects</a>
+                </li>
+                <li class="nav-item" *ngIf="userRole === 'hr'">
+                    <a class="nav-link " routerLink="/event" id="event">Events</a>
+                </li>
+                <li class="nav-item dropdown" *ngIf="userRole === 'hr'">
+                    <a class="nav-link dropdown-toggle"  id="article" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Articles
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" routerLink="/article/all-articles">All Articles</a></li>
+                      <li><a class="dropdown-item" routerLink="/article/stats">Articles Stats</a></li>
+                    </ul>
+                  </li>
+                <!-- <li class="nav-item" *ngIf="userRole === 'hr'">
+                    <a class="nav-link " routerLink="/article" id="article">Articles</a>
+                </li> -->
+                <li class="nav-item" *ngIf="userRole === 'hr'">
+                    <a class="nav-link " routerLink="/team" id="team">Team</a>
+                </li>
+                <li class="nav-item" *ngIf="userRole === 'technicalLead'">
+                    <a class="nav-link " routerLink="/recruitments" id="recruitments">Recruitment</a>
+                </li>
+                <li class="nav-item">
+                    <a  class="nav-link signout-btn" routerLink="/login"  (click)="signout()" >Logout <i class="bi bi-power icon-size"></i></a>
+                    
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br>
+
+
