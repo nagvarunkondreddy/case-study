@@ -38,7 +38,7 @@ router.delete('/deleteEvent',async (req,res)=>{
         console.log(req.body)
        const status = await eventCollection.deleteOne({_id});
        if(status.deletedCount){
-           const eventDocuments = await eventCollection.find().sort({_id:-1});
+           const eventDocuments = await eventCollection.find();
             
             // setTimeout(() => {
             //                 res.status(200).send(eventDocuments);

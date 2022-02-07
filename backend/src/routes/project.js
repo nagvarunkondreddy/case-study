@@ -37,7 +37,7 @@ router.delete('/deleteProject',async (req,res)=>{
         console.log(req.body)
        const status = await projectCollection.deleteOne({_id});
        if(status.deletedCount){
-           const projectDocuments = await projectCollection.find().sort({_id:-1});
+           const projectDocuments = await projectCollection.find();
            res.status(200).send(projectDocuments);
        }
         else{

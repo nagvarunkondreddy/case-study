@@ -17,7 +17,12 @@ router.post('/login',async (req,res)=>{
             console.log(passwordMatch)
             if(passwordMatch)
             {
+                // setTimeout(() => {
+                   
+                // }, 1000);
+
                 res.status(200).send({status:'login success',role:userDocument.role,token:userDocument.token});
+               
             }
             else{
                 res.send({status:'password is incorrect'});

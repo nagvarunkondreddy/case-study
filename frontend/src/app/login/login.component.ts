@@ -21,10 +21,11 @@ export class LoginComponent implements OnInit {
   });
 
   constructor(private router: Router,private auth: AuthService,private spinnerService: SpinnerService,private cdRef:ChangeDetectorRef) { 
-    this.init();
+  
   }
 
   ngOnInit(): void {
+    this.init();
   }
 
   loginDetails(){
@@ -33,9 +34,12 @@ export class LoginComponent implements OnInit {
    this.auth.login(this.loginForm.value).subscribe((data)=>{
     localStorage.setItem('role',data.role);
     localStorage.setItem('token',data.token);
-    this.spinnerService.requestEnded();
     if(data.status === 'login success')
-    this.router.navigateByUrl('/');
+    {
+      this.spinnerService.requestEnded();
+      this.router.navigateByUrl('/');
+    }
+
     else{
       this.formErrorMsg =data.status;
           }
